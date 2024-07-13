@@ -53,7 +53,8 @@
       "group": "Embedd Explorer",
       "pages": [
         "introduction",
-        "pages/digital-component-model"
+        "pages/digital-component-model",
+        "pages/project-options"
       ]
     }
   ],
