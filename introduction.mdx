@@ -1,71 +1,76 @@
 ---
-title: Introduction
-description: 'Welcome to the home of your new documentation'
+title: Introduction[UPDATE LINKS]
+description: '💡 Welcome to the Embedd Platform, where we automate embedded software development. Our platform streamlines the transition from datasheet to code, enabling developers to focus on innovation instead of mundane tasks.'
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+## Key Concepts
 
-## Setting up
+User interaction with the system is built around **3 key modules**:
 
-The first step to world-class documentation is setting up your editing environments.
-
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
+    title="Digital Component Model"
+    href="/pages/digital-component-model"
   >
-    Get your docs set up locally for easy development
+A structured representation of component data that was extracted from a datasheet.
   </Card>
   <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
+    title="Project Options"
+    href="***************"
   >
-    Preview your changes before you push to make sure they're perfect
+A list of configurable options that define project targets. These allow to adjust code to the specific of the user project.
+  </Card>
+  <Card
+    title="Code Generator"
+    href="***************"
+  >
+A list of configurable options that define project targets. These allow to adjust code to the specific of the user project.
   </Card>
 </CardGroup>
 
-## Make it yours
+## [Digital Component Model](/pages/digital-component-model)
 
-Update your docs to your brand and add valuable content for the best user conversion.
+Embedd’s digital component model is a digital representation of the semiconductor datasheet.
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+We use a proprietary AI engine to process the datasheet and extract information related to the embedded code for each component. This allows users to streamline datasheet interaction and consolidate all relevant information about the components they use in one location.
+
+The model is designed to be complete. Therefore, if certain fields are critical to the code but were not identified, manual completion will be required.
+
+Digital component model is split into following sections:
+
+- General info
+- Interface
+- Registers
+- Datatypes
+- Events
+- State machines (Not available yet)
+- Filters (Not available yet)
+- Commands (Not available yet)
+- Setup (Not available yet)
+- Users can effortlessly adjust any data in the model, creating an unlimited number of configurations for each component.
+
+All data extracted from the datasheet is linked back to the original PDF, enabling easy traceability to the page from which it was extracted.
+
+[💡 Learn more about interacting with the digital component model](***********)
+
+## [Project Options](****************)
+
+To generate the correct code, the user needs to specify the expected code settings.
+
+Currently available settings include:
+
+- Language
+- Target architecture / HAL
+- Memory allocation strategy
+- MCU byte order
+- Returning into a queue strategy
+
+[💡 Learn more about project options](************)
+
+## [Code Generator](***********)
+
+Our code generator takes digital component models and project options as inputs, converting them into optimized C code. This enables engineers to bring their designs to life with unmatched efficiency and precision.
+
+Our code generator ensures consistency and reliability in code generation, eliminating the unpredictability and ambiguity often associated with manual coding processes. By adhering to strict rules and algorithms, the generator produces code that adheres to industry standards and best practices, facilitating seamless integration into diverse software environments.
+
+[💡 Learn more about driver generator](*********)
