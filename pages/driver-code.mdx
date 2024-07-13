@@ -1,0 +1,165 @@
+---
+title: Driver Code
+description: "
+An Embedd device driver consists of a set of files generated from a device datasheet. It allows users to access the functionality of the device. The final archive contains two types of files:
+ \n - Library files providing common structures, data types, etc.
+ \n - Generated files providing specific device implementation
+"
+---
+
+# Get Started
+
+To get started with generated driver perform the following actions:
+
+1. Unzip the downloaded archive to a preferable location in your project and add them to your build system.
+2. Include the main driver’s header file. It is named like **device_class.h**. For example: the name of this file for TMP112 looks like **tmp112_temperature_sensors.h**
+
+```C
+// ------------------------ Including header file related to the device ----------------------- //
+#include  "dev_class.h"```
+
+1. Use the Macro to create all the components of the device’s object. This Macro looks like **DEVICE_CLASS_DEVICE_DEFINE**
+
+```C
+// ---------------------------------- Device object creation ---------------------------------- //
+DEV_CLASS_DEVICE_DEFINE(dev0, "DEV_0")
+```
+
+1. Init device’s bus object.
+
+```C
+// ------------------------------- Device's bus object creation ------------------------------- //
+static EMBEDD_RESULT dev0_bus_write(const struct embedd_device_t* dev, const uint8_t* data_ptr, uint32_t data_size);
+static EMBEDD_RESULT dev0_bus_read(const struct embedd_device_t* dev, uint8_t* data_ptr, uint32_t data_size);
+static embedd_bus_t dev0_bus = { .write = dev0_bus_write, .read = dev0_bus_read };
+// ----------------------------- Device's initialization function ------------------------------ //
+EMBEDD_RESULT dev0_init()
+{    
+        EMBEDD_RESULT res = EMBEDD_RESULT_OK;    
+        // device's bus initialization    
+        dev0.bus = &dev0_bus;    
+        return res;}
+        // ---------------------------- Implementation of device's bus API ---------------------------- //
+        EMBEDD_RESULT dev0_bus_write(const struct embedd_device_t* dev, const uint8_t* data_ptr, uint32_t data_size)
+        {    
+        if( ( dev == NULL ) || ( data_ptr == NULL ) )    
+        {        
+                return EMBEDD_RESULT_ERR;
+    }    
+            /* USER CODE BEGIN */
+                
+            /* USER CODE END */    
+            return EMBEDD_RESULT_OK;
+    }
+    EMBEDD_RESULT dev0_bus_read(const struct embedd_device_t* dev, uint8_t* data_ptr, uint32_t data_size)
+    {    
+            if( ( dev == NULL ) || ( data_ptr == NULL ) )    
+            {        
+                    return EMBEDD_RESULT_ERR;
+                 }    
+            /* USER CODE BEGIN */
+               
+            /* USER CODE END */    
+            return EMBEDD_RESULT_OK;
+            }
+```
+
+1. Check all “weak” functions and add implementation if it is needed.
+
+```C
+// ----------------------- Weak functions' implementation for STM32 HAL ----------------------- //
+void embedd_hal_sleep( uint32_t mseconds )
+{
+    /* USER CODE BEGIN */    
+    HAL_Delay( mseconds );    
+    /* USER CODE END */
+    }
+```
+
+# Device Usage
+
+## Registers
+
+Registers are small storage locations that manage specific functions or data within the device. Each register has a unique address that allows it to be accessed and modified. These registers can store configuration settings, calibration data, or measurement outputs, controlling device behavior and facilitating communication between the peripheral device and the processor it’s connected to. They play a crucial role in setting operational modes, initiating actions, and reading sensor data, effectively acting as the interface for the internal state and operations of the device.
+
+The file **device_class_registers.h** provides information about all the reagisters a device has. Let’s take **HDC2080** as shown in the example, and write data to the **HUM_OFFSET_ADJUST** register and then read it back. The file **hdc2080_humidity_moisture_sensors_data_types.h** contains all the information about the type of data a register contains. Here is the information about data type contained in **HUM_OFFSET_ADJUST** register:
+
+```C
+// Humidity offset adjustment. Added to the converted Humidity value
+typedef int8_t hdc2080_offset_adjust_t;
+#define HDC2080_OFFSET_ADJUST_02RH 0
+#define HDC2080_OFFSET_ADJUST_04RH 1
+#define HDC2080_OFFSET_ADJUST_08RH 2
+#define HDC2080_OFFSET_ADJUST_16RH 3
+#define HDC2080_OFFSET_ADJUST_31RH 4
+#define HDC2080_OFFSET_ADJUST_63RH 5
+#define HDC2080_OFFSET_ADJUST_125RH 6
+#define HDC2080_OFFSET_ADJUST_25RH 7
+#define HDC2080_OFFSET_ADJUST_DEFAULT 0
+#define HDC2080_OFFSET_ADJUST_VALID(val) (\  
+(val) == HDC2080_OFFSET_ADJUST_02RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_04RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_08RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_16RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_31RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_63RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_125RH ||\  
+(val) == HDC2080_OFFSET_ADJUST_25RH ||\  0)
+```
+
+The file **hdc2080_humidity_moisture_sensors_registers.h** contains all the information about the registers device has. Here is information about **HUM_OFFSET_ADJUST** register and its declaration:
+
+```C
+// Hum_offset_adjust
+#define hdc2080_offset_adjust_read_reg_addr 0x09
+#define hdc2080_offset_adjust_write_reg_addr 0x09
+#define hdc2080_offset_adjust_delay 0
+typedef hdc2080_offset_adjust_t hdc2080_offset_adjust;
+```
+
+Here are the Macros providing an access to the device’s registers:
+
+```C
+/*
+ *  \brief      Write data to the register
+ *  
+ *  \param      dev                     pointer to the device whose register should be written with data
+ *  \param      _typename               register type
+ *  \param      var                     variable containing data to be written
+ *  \return     EMBEDD_RESULT           operation result code
+ */
+#define HDC2080_HUMIDITY_MOISTURE_SENSORS_WRITE_REG(dev, _typename, var) \
+        ((hdc2080_humidity_moisture_sensors_api_t*)(dev).api)->hdc2080_humidity_moisture_sensors_write_reg(&(dev), \
+        _typename##_write_reg_addr, &(var), sizeof(_typename), _typename##_delay)
+
+/*
+ *  \brief      Read data from the register
+ *  
+ *  \param      dev                     pointer to the device from whose register data should be read
+ *  \param      _typename               register type
+ *  \param      var                     Variable into which the data from the register will be copied
+ *  \return     EMBEDD_RESULT           operation result code
+ */
+#define HDC2080_HUMIDITY_MOISTURE_SENSORS_READ_REG(dev, _typename, var) \
+        ((hdc2080_humidity_moisture_sensors_api_t*)(dev).api)->hdc2080_humidity_moisture_sensors_read_reg(&(dev), \
+        _typename##_read_reg_addr, &(var), sizeof(_typename), _typename##_delay)
+```
+
+Finally, to demonstrate writing to and reading from the **HUM_OFFSET_ADJUST** register, consider the following C code snippet:
+
+```C
+extern embedd_device_t hdc2080;
+
+bool set_humidity_offset( void ) {
+    hdc2080_offset_adjust_t humidity_offset = HDC2080_OFFSET_ADJUST_04RH;
+    
+    // Write the humidity offset
+    HDC2080_HUMIDITY_MOISTURE_SENSORS_WRITE_REG( &hdc2080, hdc2080_offset_adjust, humidity_offset);
+
+    // Read back the humidity offset to verify
+    hdc2080_offset_adjust_t read_back_offset;
+    HDC2080_HUMIDITY_MOISTURE_SENSORS_READ_REG( &hdc2080, hdc2080_offset_adjust, read_back_offset);
+    
+    return (read_back_offset == humidity_offset) ? true : false;
+}
+```
