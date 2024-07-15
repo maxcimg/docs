@@ -18,9 +18,10 @@
   },
   "navigation": [
     {
-      "group": "Embedd Explorer",
+      "group": "Embedd Platform",
       "pages": [
         "introduction",
+        "pages/embedd-explorer",
         "pages/digital-component-model",
         "pages/project-options",
         "pages/generating-drivers",
