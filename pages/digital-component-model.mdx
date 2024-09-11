@@ -164,6 +164,56 @@ Each event has it’s own set of fields:
 - Timer: Interval
 - MSG: Length, Preambula: `{type(raw, string), value}`
 
+# Setup Section
+
+In the Setup section, you can configure initial values that will be written to the registers during device initialization.
+
+### 1. Adding Registers to the List
+
+To add registers to the list:
+
+![image.png](../images/digital-component-model/add_register_setup.png)
+
+1. **Open the Register Selection Interface:**
+    - Click on “Add Registers” located in the middle or at the top of the tab.
+2. **Select Registers:**
+    - Choose the registers you want to set initial values for from the list.
+        
+        ![image.png](../images/digital-component-model/select_register.png)
+        
+    
+    **Note:** Only registers with `W` (write) and `RW` (read/write) access types will be displayed. If some registers are missing, return to the Registers section to update their access types.
+    
+3. **Multiple Selections:**
+    - You can select any register multiple times if needed.
+
+### 2. Arranging Register Order
+
+Once all registers are selected:
+
+**Rearrange Registers:**
+
+- Drag the registers to the desired positions within the list to adjust their order.
+
+![image.png](../images/digital-component-model/arrange_register.png)
+
+### 3. Setting Register Values
+
+Choose one of these methods to set values for each register:
+
+![image.png](../images/digital-component-model/set_value.png)
+
+1. **Enter Decimal or Hex Value:**
+    - Input the desired value directly. Use the top page selector to choose between Decimal (DEC) or Hexadecimal (HEX) format.
+2. **Adjust Bits Using the Bit Table:**
+    - Click on individual bits in the bit table to toggle their values between 0 and 1.
+3. **Select Values from the Value Breakdown Table:**
+    - Choose values for each field from the value breakdown table.
+
+### Finalizing Setup
+
+Once you have added, arranged, and configured the registers with their values, review your settings to ensure accuracy. These configurations will be applied during device initialization, so verify that all entries are correct. For additional verification, you can use the PDF backlink mode to cross-check your setup against the provided documentation. This ensures that all configurations align with your requirements before finalizing the setup.
+
 # PDF Mode
 
 Along with any chapter of the device model user can turn on a PDF mode and corresponding PDF datasheet will appear in the same screen along with digital component model.
