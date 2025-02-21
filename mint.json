@@ -18,8 +18,9 @@
   },
   "navigation": [
     {
-      "group": "Quickstart",
+      "group": "Getting started",
       "pages": [
+        "pages/quickstart",
         "pages/register",
         "pages/vs-code",
         "pages/webapp",
