@@ -18,6 +18,16 @@
   },
   "navigation": [
     {
+      "group": "Quickstart",
+      "pages": [
+        "pages/register",
+        "pages/vs-code",
+        "pages/webapp",
+        "pages/navigatingui",
+        "pages/datasheetupload",
+      ]
+    },
+    {
       "group": "Embedd Platform",
       "pages": [
         "introduction",
