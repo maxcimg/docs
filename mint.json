@@ -44,6 +44,34 @@
       ]
     },
     {
+      "group": "Testing",
+      "pages": [
+        "pages/howitworkstesting",
+        "pages/generatingtestingenv",
+        "pages/connectingdevboard",
+        "pages/listofboards",
+        "pages/data-analysis",
+        "pages/errorhandling"
+      ]
+    },
+    {
+      "group": "Drivers",
+      "pages": [
+        "pages/howitworksdrivers",
+        "pages/drivertargets",
+        "pages/baremetal",
+        "pages/cmsis",
+        "pages/zephyr"
+      ]
+    },
+    {
+      "group": "Generated Documentation",
+      "pages": [
+        "pages/howitworksdocs",
+        "pages/docscontents"
+      ]
+    },
+    {
       "group": "Embedd Platform",
       "pages": [
         "introduction",
