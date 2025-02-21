@@ -28,6 +28,22 @@
       ]
     },
     {
+      "group": "Component Model",
+      "pages": [
+        "pages/howitworkscomponent",
+        "pages/errormanagementcomponent",
+        "pages/generalinfo",
+        "pages/bus",
+        "pages/registers",
+        "pages/commands",
+        "pages/events",
+        "pages/setup",
+        "pages/filters",
+        "pages/action-sequences",
+        "pages/state-machines"
+      ]
+    },
+    {
       "group": "Embedd Platform",
       "pages": [
         "introduction",
