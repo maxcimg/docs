@@ -1,35 +1,43 @@
 ---
-title: 'Navigating UI'
-description: 'File describes how to navigate UI'
+title: "Navigating UI"
 ---
 
-# Embedd Explorer Structure
+![](/images/NavigatingUI.png)
 
-Embedd Explorer has the following structure:
+### The Embedd UI has two main zones:
 
-1. Component Name  reflects part number of the component
-2. Documentation  folder that will contain all of the documentation related to the component. Each component might have multiple documentation sources, i.e. reflecting datasheet revisions.
-3. Configuration  each Documentation version will have a nested Configuration folder. Configurations are editable representations of Digital Component Model. The folder will contain all of the configurations user generates for that documentation set. A default, “system” configuration will always be available and hold unedited configuration.
-4. Drivers  folder with driver source code library will be nested under each configuration, if user generated code for it.
+* Component Explorer
 
-Embedd Explorer Overview
-<img width="300" src="../images/digital-component-model/embedd_explorer.png" />
+* Application Screen
 
-# Adding a New Component
+**The Component Explorer is organised as follows:**
 
-In order to add a new component you must press the Upload Datasheet button in the header of the Component section and select a datasheet to upload. The datasheet needs to be uploaded from a local environment.
+1. Component Name shows the component's part number
 
-Adding component to the system![Adding component to the system](../images/digital-component-model/upload_ds.png)
+2. Documentation folder contains all component-related documentation, including different datasheet revisions
 
-Processing a datasheet can take anywhere from 5 minutes to an hour. Therefore, components labeled as "processing" will appear in the related tab during this time.
+3. Configuration folder (nested under each Documentation version) contains editable Digital Component Models. Users can create multiple configurations, while a default "system" configuration maintains the unedited version
 
-Datasheet Processing State
+4. Drivers folder stores the generated driver source code library for each configuration
 
-![Datasheet Processing State](../images/digital-component-model/datasheet_p_state.png)
+5. Testing folder contains the testing environment for each configuration
 
-Onсe the component has been processed user can access digital component model by clicking on the configuration of this component.
+**The Component Explorer also features:**
 
-# Component Search
+* Upload datasheet button (see next section for details)
 
-User can use search to search for a specific component or configuration. Search functionality cover a partial match and a full match.
+* Three-dot menu for accessing User Profile, Documentation, and Logout
 
+The Application Screen uses a tab-based interface similar to VSCode.&#x20;
+
+Clicking items in the Component Explorer (configurations, datasheets, testing environments, or code) opens them in new tabs.
+
+### <u>Here's the typical workflow:</u>
+
+1. Upload a datasheet
+
+2. View the created component in Explorer and its opened configuration
+
+3. Customize the configuration in the Application Screen based on your needs. Your changes create a new configuration in the Explorer
+
+4. Generate Testing, Driver, or Documentation as needed—each creates a new tab in the Explorer

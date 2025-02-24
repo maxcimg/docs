@@ -26,6 +26,7 @@
         "pages": [
           "pages/howitworkscomponent",
           "pages/errormanagementcomponent",
+          "pages/pdfbacklink",
           "pages/generalinfo",
           "pages/bus",
           "pages/registers",
