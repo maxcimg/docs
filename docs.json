@@ -43,7 +43,7 @@
           "pages/generatingtestingenv",
           "pages/connectingdevboard",
           "pages/listofboards",
-          "pages/data-analysis",
+          "pages/data-analytics",
           "pages/errorhandling"
         ]
       },
