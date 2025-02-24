@@ -33,9 +33,7 @@
           "pages/datatypes",
           "pages/events",
           "pages/setup",
-          "pages/filters",
-          "pages/action-sequences",
-          "pages/state-machines"
+          "pages/filters"
         ]
       },
       {
