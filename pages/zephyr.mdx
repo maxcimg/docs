@@ -3,18 +3,126 @@ title: 'Zephyr'
 description: 'Description of your new file.'
 ---
 
-The Zephyr driver implementation integrates with the Zephyr RTOS ecosystem, providing a scalable and portable solution. At this point only a limited coverage of Zephyr driver is provided, covering register access. Class specific APIs are currently being added to the system. 
+The Zephyr driver implementation integrates with the Zephyr RTOS ecosystem, providing a scalable and portable solution. At this point only a limited coverage of Zephyr driver is provided, covering register access. Class specific APIs are currently being added to the system.
+
+<Accordion title="Read Me" defaultOpen={false}>
+  ````
+  # Integrating the PRESSURE SENSORS - TRANSDUCERS Driver with custom API
+
+  This README provides instructions on how to integrate the provided custom Zephyr device driver for the LPS22HH Pressure Sensors - Transducers into your project.
+
+  ## 1. File Placement
+
+  Place the following files in your Zephyr project's `include/app/drivers` directory:
+
+  * `Pressure Sensors - Transducers.h` (Driver header file)
+  * `Pressure Sensors - Transducers_registers.h` (Register definitions)
+  * `Pressure Sensors - Transducers_data_types.h` (Data type definitions)
+
+  Place the following files in your Zephyr project's `drivers/Pressure Sensors - Transducers` directory:
+
+  * `Pressure Sensors - Transducers.c` (Driver source file)
+  * `Pressure Sensors - Transducers_registers.c` (Register access functions)
+  * `Kconfig` (Driver's configurations)
+
+  Place the following file in your Zephyr project's `dts/bindings/Pressure Sensors - Transducers` directory:
+
+  * `Pressure Sensors - Transducers.yaml` (Devicetree binding file)
+
+  ## 2. Device Tree Overlay
+
+  You'll need to create a device tree overlay file (e.g., `app/boards/your_board.overlay`) to instantiate the Pressure Sensors - Transducers driver.
+
+  Here's an example:
+
+  I2C:
+
+  ```dts
+  &i2c1 {
+    Pressure Sensors - Transducers@77 {
+      status = "okay";
+      compatible = "<vendor_nickname>,Pressure Sensors - Transducers";
+      reg = <0x77>;
+    };
+  };
+  ```
+
+  This overlay adds a Pressure Sensors - Transducers device node on I2C1 bus with address 0x77. Adjust the bus number and address according to your hardware setup.
+
+  SPI:
+
+  ```dts
+  &spi1 {
+    status = "okay";
+    cs-gpios = <&gpiob 0 GPIO_ACTIVE_LOW>;
+
+    Pressure Sensors - Transducers@0 {
+      status = "okay";
+      compatible = "st,Pressure Sensors - Transducers";
+      reg = <0>;
+      spi-max-frequency = <1000000>;
+    };
+  };
+  ```
+
+  This overlay adds a Pressure Sensors - Transducers device node on SPI1 bus with CS-GPIO 0. Adjust the bus number, CS-GPIO and SPI frequency according to your hardware setup.
+
+  ## 3. CMakeLists.txt Modifications
+
+  Create a `drivers/Pressure Sensors - Transducers/CMakeLists.txt` file with the following lines to create a cmake library project:
+
+  ```cmake
+  zephyr_library()
+  zephyr_library_sources_ifdef(CONFIG_Pressure Sensors - Transducers Pressure Sensors - Transducers.c Pressure Sensors - Transducers_registers.c)
+  ```
+
+  Update or create if needed the `drivers/CMakeLists.txt` file with thi following line to include the driver's library depending on the configuration:
+
+  ```cmake
+  add_subdirectory_ifdef(CONFIG_Pressure Sensors - Transducers Pressure Sensors - Transducers)
+  ```
+
+  ## 4. Kconfig Integration
+
+  To make your driver configurable through Kconfig, you need include your Kconfig file in your `/drivers/Kconfig` file using:
+
+  ```kconfig
+  rsource "Pressure Sensors - Transducers/Kconfig"
+  ```
+
+  ## 5. Usage Example
+
+  Here's a simple example of how to use the driver in your application code:
+
+  ```c
+  #include <stdio.h>#include <zephyr/kernel.h>#include <app/drivers/Pressure Sensors - Transducers.h>void main(void)
+  {
+      const struct device *const dev = DEVICE_DT_GET_ONE(st_Pressure Sensors - Transducers);
+
+      if (!device_is_ready(dev)) {
+          printf("Device %s is not ready.\n", dev->name);
+          return 0;
+      }
+
+      /* USER CODE BEGIN */
+
+      /* USER CODE END */
+  }
+  ```
+  ````
+</Accordion>
 
 
-The file structure of the generated Zephyr driver is as follows: 
 
-| File name | Description  |
-| --- | --- |
-| Data_types.h  |  |
-| Registers.h |  |
-| Registers.c |  |
-| part_name.h |  |
-| part_name.c |  |
-| Kconfig |  |
-| part_name.yaml |  |
-| README.md |  |
+The file structure of the generated Zephyr driver is as follows:
+
+| File name       | Description |
+| --------------- | ----------- |
+| Data\_types.h   |             |
+| Registers.h     |             |
+| Registers.c     |             |
+| part\_name.h    |             |
+| part\_name.c    |             |
+| Kconfig         |             |
+| part\_name.yaml |             |
+| README.md       |             |

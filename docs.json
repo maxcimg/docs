@@ -67,18 +67,6 @@
         ]
       },
       {
-        "group": "Embedd Platform",
-        "pages": [
-          "introduction",
-          "pages/embedd-explorer",
-          "pages/digital-component-model",
-          "pages/project-options",
-          "pages/generating-drivers",
-          "pages/driver-code",
-          "pages/system-limitations"
-        ]
-      },
-      {
         "group": "Contact Our Team",
         "pages": [
           "contact/contact"
@@ -96,9 +84,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://www.linkedin.com/company/mintsearch"
+      "x": "https://x.com/embedd_it",
+      "github": "https://github.com/Embedd-it",
+      "linkedin": "https://www.linkedin.com/company/embedd"
     }
   }
 }
