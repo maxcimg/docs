@@ -1,76 +1,21 @@
 ---
-title: Quickstart
-description: '💡 Welcome to the Embedd Platform, where we automate embedded software development. Our platform streamlines the transition from datasheet to code, enabling developers to focus on innovation instead of mundane tasks.'
+title: "Quickstart"
 ---
 
-## Key Concepts
+## Welcome to Embedd Docs
 
-User interaction with the system is built around **3 key modules**:
+Embedd is a development tool designed for embedded software and electronics engineers to streamline integration and testing of semiconductor chips. Our approach stems from a belief that the inefficient data transfer between chip makers and integrators slows down and increases risks of the development process.
 
-<CardGroup cols={3}>
-  <Card
-    title="Digital Component Model"
-    href="/pages/digital-component-model"
-  >
-A structured representation of component data that was extracted from a datasheet.
-  </Card>
-  <Card
-    title="Project Options"
-    href="/pages/project-options"
-  >
-A list of configurable options that define project targets. These allow to adjust code to the specific of the user project.
-  </Card>
-  <Card
-    title="Code Generator"
-    href="/pages/generating-drivers"
-  >
-A deterministic code generation provides high quality and stability of the output code.
-  </Card>
-</CardGroup>
+Embedd leverages AI to convert complex chip data in the form of PDF datasheets, user manuals, erratas into machine-readable models that become the backbone of the service.
 
-## [Digital Component Model](/pages/digital-component-model)
+We utilise stabilised chip representations in order to:
 
-Embedd’s digital component model is a digital representation of the semiconductor datasheet.
+* Facilitate driver generation
 
-We use a proprietary AI engine to process the datasheet and extract information related to the embedded code for each component. This allows users to streamline datasheet interaction and consolidate all relevant information about the components they use in one location.
+* Allow fast functional testing
 
-The model is designed to be complete. Therefore, if certain fields are critical to the code but were not identified, manual completion will be required.
+* Generate documentation
 
-Digital component model is split into following sections:
+As user of Embedd you will be able to process component datasheet into an editable digital model that can be used to generate driver code, tests and documentation for multitude of targets.
 
-- General info
-- Interface
-- Registers
-- Datatypes
-- Events
-- State machines (Not available yet)
-- Filters (Not available yet)
-- Commands (Not available yet)
-- Setup (Not available yet)
-- Users can effortlessly adjust any data in the model, creating an unlimited number of configurations for each component.
-
-All data extracted from the datasheet is linked back to the original PDF, enabling easy traceability to the page from which it was extracted.
-
-[💡 Learn more about interacting with the digital component model](/pages/digital-component-model)
-
-## [Project Options](/pages/project-options)
-
-To generate the correct code, the user needs to specify the expected code settings.
-
-Currently available settings include:
-
-- Language
-- Target architecture / HAL
-- Memory allocation strategy
-- MCU byte order
-- Returning into a queue strategy
-
-[💡 Learn more about project options](/pages/project-options)
-
-## [Code Generator](/pages/generating-drivers)
-
-Our code generator takes digital component models and project options as inputs, converting them into optimized C code. This enables engineers to bring their designs to life with unmatched efficiency and precision.
-
-Our code generator ensures consistency and reliability in code generation, eliminating the unpredictability and ambiguity often associated with manual coding processes. By adhering to strict rules and algorithms, the generator produces code that adheres to industry standards and best practices, facilitating seamless integration into diverse software environments.
-
-[💡 Learn more about driver generator](/pages/generating-drivers)
+##
