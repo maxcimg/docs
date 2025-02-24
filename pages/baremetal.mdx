@@ -1,5 +1,35 @@
 ---
 title: 'Bare metal'
-description: 'Description of your new file.'
+description: ''
 ---
 
+The Bare Metal driver provides direct hardware access without an operating system or hardware abstraction layer. At this moment we only provide peripheral-side implementation for bare-metal targets with user still being required to develop MCU-side bus implementation. 
+
+The file structure of the generated bare-metal driver is as follows: 
+
+| File name | Description  |
+| --- | --- |
+| Data_types.h  |  |
+| Registers.h |  |
+| Registers.c |  |
+| Commands.h |  |
+| Commands.c |  |
+| Events.h |  |
+| part_name.h |  |
+| part_name.c |  |
+| embedd_device.h |  |
+| embedd_hal.c |  |
+| embedd_hal.h |  |
+| embedd_utils.c |  |
+| embedd_utils.h |  |
+| embedd_event.c |  |
+| embedd_event.h |  |
+| embedd_event_types.h |  |
+| embedd_event_manager_cgf.h |  |
+| embedd_event_manager.c |  |
+| embedd_error.h |  |
+| embedd_i2c.c |  |
+| embedd_i2c.h |  |
+| embedd_spi.c |  |
+| embedd_spi.h |  |
+| README.md |  |

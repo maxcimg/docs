@@ -3,3 +3,21 @@ title: 'Targets'
 description: 'Description of your new file.'
 ---
 
+The system converts a Component Model into a driver library through automated code generation. It parses the structured component data and selected target options to generate corresponding source code files. The process is deterministic—without AI involvement—ensuring consistent and stable outputs.
+
+The workflow enables users to test components before generating code, which reduces development cycles and debugging time.
+
+To generate drivers, select your targets and click the "Generate Driver" button. The driver library is created instantly and matches your chosen configuration. You can generate multiple drivers for different targets from a single Component Model configuration.
+
+Users can select from several target options, each affecting the generated code. These targets are configured in the Project Options section of the Component Model.
+
+The following driver configuration options are currently available: 
+
+| Name  | Available options  |
+| --- | --- |
+| Language  | C |
+| HAL Architecture | Bare Metal/CMSIS/Zephyr |
+| Compliance  | Not available at the moment |
+| Memory Allocation | Static/Dynamic  |
+| Controller byte order | Big-Endian/Little-Endian |
+| Code style | Blocking |
