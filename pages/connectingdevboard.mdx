@@ -1,4 +1,18 @@
 ---
 title: "Connect a dev board"
-description: "Description of your new file."
+description: ""
 ---
+
+Embedd handles the integration of components with development boards. You can view the full list of supported boards here: LINK. Enterprise users can also request support for custom boards—reach out to us here if interested.
+
+Integration requires no BSP firmware for the board, as Embedd handles this automatically.
+
+Follow these steps for integration:
+
+1. Select a development board from the list
+2. Click "Get Firmware" to download the .hex file
+3. Connect your board to the computer. If your board lacks an onboard debugger, connect through an external debugger
+4. Use the appropriate tool for your board manufacturer to erase the board's memory and flash the firmware from step 2. Restart your board afterward
+5. Verify that your device is connected to the development board using the interface and address configured in your Component Model. If you need to modify your configuration in Embedd, generate a new one and repeat these steps
+6. In the testing tab, set your desired data exchange frequency (this determines how often values are read from the device) and click Connect
+7. Upon successful connection, your development board and target interfaces will display green dots. Purple dots will appear above testing environment sections to indicate active data reception
