@@ -28,7 +28,6 @@
           "pages/errormanagementcomponent",
           "pages/pdfbacklink",
           "pages/generalinfo",
-          "pages/bus",
           "pages/registers",
           "pages/commands",
           "pages/events",
