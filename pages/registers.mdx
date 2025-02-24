@@ -20,3 +20,17 @@ Each register in the model contains the following information:
 | Datatype Type        | Defines between bitmap or int type of the register.            |
 | Datatype Size        | Determines total size of the datatype                          |
 | Datatype description | Provides description of the datatype                           |
+
+For registers with bitmaps, you'll find detailed bit allocation information. You can configure these allocations either visually through drag-and-drop or by editing data fields directly.
+
+Each bit allocation contains the following information:
+
+| **Section Name**    | **Description**                                                                                                                                                                                                                                   |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bit allocation      | Provides graphical representation of all fields in high to low bit order. Each field is clickable, opening further information. See “Adjusting bit allocation” on how to adjust this section.                                                     |
+| Offset              | Provides relative address of the field within bit allocation.                                                                                                                                                                                     |
+| Size                | Size of the field in bits.                                                                                                                                                                                                                        |
+| Name                | Defines name of the field                                                                                                                                                                                                                         |
+| Default             | Defines default value of the field                                                                                                                                                                                                                |
+| Description         | Provide description of the field.                                                                                                                                                                                                                 |
+| List of constraints | Provides a list of possible values that could be written into the field and their corresponding functionalities. Users can add additional constraints by clicking “Add constraint”. Please see section “Marking bits reserved” for reserved bits. |
