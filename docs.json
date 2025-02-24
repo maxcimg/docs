@@ -30,6 +30,7 @@
           "pages/generalinfo",
           "pages/registers",
           "pages/commands",
+          "pages/datatypes",
           "pages/events",
           "pages/setup",
           "pages/filters",

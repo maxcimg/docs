@@ -1,5 +1,20 @@
 ---
-title: 'Commands'
-description: 'Description of your new file.'
+title: "Commands"
 ---
 
+This chapter lets you manage the device's supported commands. Commands are fundamental building blocks for device interaction, especially over serial interfaces like UART, RS485, IP, and TTY. These interfaces enable request-response interactions between devices. Unlike registers—which store values in memory—commands trigger specific actions or behaviours within a device.
+
+For each command, the model contains the following information:
+
+| Section Name     | Description                                                                                                                |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Command name     | Name of command as per datasheet                                                                                           |
+| Opcode           | Byte array with the command's opcode (generally 1 byte hex value for I2C or SPI, or a char string for AT commands devices) |
+| Delay            | Delay for the commands in ms - between write and read                                                                      |
+| Arguments        | List of arguments accepted by command                                                                                      |
+| Expected results | List of expected results of the command                                                                                    |
+| Description      | Description of command                                                                                                     |
+
+*How to convert a Command to a Register?*
+
+Sometimes you may need to convert a command into a register, particularly if data extraction didn't process correctly. To do this, click the "..." menu to the right of the command and select "To registers". This allows you to create a new register based on the command.
