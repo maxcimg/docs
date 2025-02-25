@@ -1,7 +1,7 @@
 ---
 title: "Error management"
 ---
- 
+
 <video autoPlay muted loop playsInline className="w-full aspect-video" src="https://embedd.it/img/Errors.mp4" />
 
 Since we use generative AI to extract information from datasheets—which sometimes lack complete component information—we've implemented robust error management tools to help you.
@@ -10,20 +10,22 @@ Errors act as blockers—you cannot proceed to driver or testing generation unti
 
 The system also includes warnings, which appear in orange. These non-blocking notifications highlight potentially inconsistent elements in your Component Model.
 
-*How do I know there is an error?*
+<Card title="How do I know there is an error?" icon="bolt" color="red">
+  When a section contains an error, a red dot appears above the chapter name. Navigate to that section to see error details.
+</Card>
 
-When a section contains an error, a red dot appears above the chapter name. Navigate to that section to see error details.
+<Card title="How do I find an error inside the section?" icon="bolt" color="red">
+  In smaller sections (like General component information), error fields are highlighted in red.
 
-*How do I find an error inside the section?*
 
-In smaller sections (like General component information), error fields are highlighted in red.
 
-For larger sections (like Registers), we provide an error navigation menu below the Component Model chapters. This menu shows the error count and offers buttons to navigate between errors.
+  For larger sections (like Registers), we provide an error navigation menu below the Component Model chapters. This menu shows the error count and offers buttons to navigate between errors.
+</Card>
 
 *Which types of errors exist?*
 
-
-
-| Error Name | Description | Resolution |
-| ---------- | ----------- | ---------- |
-|            |             |            |
+| Error Name                                          | Description | Resolution |
+| --------------------------------------------------- | ----------- | ---------- |
+| Inconsistency in datatype size                      |             |            |
+| Overlapping of the offsets                          |             |            |
+| Number of offsets exceeds the size of the data type |             |            |
