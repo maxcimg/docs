@@ -1,27 +1,34 @@
 ---
-title: 'Formulas'
-description: 'Description of your new file.'
+title: "Formulas"
 ---
 
 This chapter explains how to model mathematical transformations that convert data between different representations (such as raw sensor values to conventional units). The formula model treats all inputs as variables, while other system components handle data acquisition from registers, memory, or networks.
 
+
+  <video autoPlay muted loop playsInline className="w-full aspect-video" src="https://embedd.it/img/Formulas.mp4" />
+
+
 Common use cases include:
 
-- Converting raw sensor values to physical units
-- Applying calibration factors
-- Combining multiple inputs into derived measurements
-- Unit conversions
+* Converting raw sensor values to physical units
+
+* Applying calibration factors
+
+* Combining multiple inputs into derived measurements
+
+* Unit conversions
 
 Users can perform two key actions:
 
-- **Create a combiner register** - Combines multiple register readings into a single value. Users can select registers and specify their combination order to obtain a total reading. The combined register then appears in the formula section's register list.
-- **Create a formula** - Applies mathematical calculations to raw register readings. This allows users to apply factors like sensitivity coefficients to obtain processed values.
+* **Create a combiner register** - Combines multiple register readings into a single value. Users can select registers and specify their combination order to obtain a total reading. The combined register then appears in the formula section's register list.
+
+* **Create a formula** - Applies mathematical calculations to raw register readings. This allows users to apply factors like sensitivity coefficients to obtain processed values.
 
 Formulas currently support these basic mathematical operations:
 
-| **Name** | **Expression** |
-|:--- |:--- |
-| Division  | / |
-| Multiplication | * |
-| Subtraction  | - |
-| Addition | + |
+| **Name**       | **Expression** |
+| :------------- | :------------- |
+| Division       | /              |
+| Multiplication | \*             |
+| Subtraction    | -              |
+| Addition       | +              |
