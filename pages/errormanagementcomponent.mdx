@@ -23,19 +23,21 @@ The system also includes warnings, which appear in orange. These non-blocking no
 ### Which types of errors exist?
 
 <AccordionGroup>
-  <Accordion title="Inconsistency in datatype size" defaultOpen={false}>
+  <Accordion title="Warning on inconsistency of register/datatype size" defaultOpen={false}>
+    /
 
+    Warnings occur in the system when non-blocking inconsistencies are detected. These include cases where a specific register has a size larger than other registers within the same device. You don't have to resolve this to generate testing/driver, however, we suggest to use PDF Backlink feature to doublecheck correctness.&#x20;
   </Accordion>
 
-  <Accordion title="Overlapping of the offsets" defaultOpen={false}>
-
+  <Accordion title="Bit allocation overlap" defaultOpen={false}>
+    A bit allocation overlap error occurs when two fields share overlapping bits. In most cases, this is due to an AI extraction error. To resolve this, click the ‘Show Datasheet’ button to open the relevant section in the PDF document. Then, click the field name in the error message to adjust its offset and size.
   </Accordion>
 
   <Accordion title="Number of offsets exceeds the size of the data type" defaultOpen={false}>
-
+    This error occurs when the datatype size is incorrect or the bit allocation contains extra fields. To resolve it, click the ‘Show Datasheet’ button to open the relevant section in the PDF document. Depending on the cause of the error, adjust the datatype size, remove extra bits, or change the datatype to an integer.
   </Accordion>
 
   <Accordion title="Bitfield name is not unique" defaultOpen={false}>
-
+    Ensure that the names of each bitfield are unique. This applies to reserved bits as well.&#x20;
   </Accordion>
 </AccordionGroup>
