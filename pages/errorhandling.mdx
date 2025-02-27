@@ -2,49 +2,50 @@
 title: 'Error handling'
 description: ''
 ---
+<AccordionGroup>
+    <Accrodion title="Device is not connecting" defaultOpen={false}>
+      * Verify that you have flashed the correct firmware for your board
 
-<Card title="Device is not connecting" icon="plug" color="red">
-  * Verify that you have flashed the correct firmware for your board
+      * Confirm that your device is properly connected to your computer
 
-  * Confirm that your device is properly connected to your computer
+      * If these steps don't resolve the issue, contact our support team here
+    </Accrodion>
 
-  * If these steps don't resolve the issue, contact our support team here
-</Card>
+    <Accrodion title="My board is not in the list" defaultOpen={false}>
+      * Upgrade to a Pro subscription to access our expanded board library
 
-<Card title="My board is not in the list" icon="list" color="red">
-  * Upgrade to a Pro subscription to access our expanded board library
+      * Contact us to request support for your custom board here
 
-  * Contact us to request support for your custom board here
+      * Check back regularly as we continue adding new supported boards
+    </Accrodion>
 
-  * Check back regularly as we continue adding new supported boards
-</Card>
+    <Accrodion title="Devboard connected, but bus connection failed"  defaultOpen={false}>
+      * Verify that the board and component are wired correctly
 
-<Card title="Devboard connected, but bus connection failed" icon="microchip" color="red">
-  * Verify that the board and component are wired correctly
+      * Confirm that your chosen interface pins are active by default on your board
 
-  * Confirm that your chosen interface pins are active by default on your board
+      * Double-check the bus address in your configuration
+    </Accrodion>
 
-  * Double-check the bus address in your configuration
-</Card>
+    <Accrodion title="Device address is not found"  defaultOpen={false}>
+      * Verify the bus address in your configuration settings
+    </Accrodion>
 
-<Card title="Device address is not found" icon="microchip" color="red">
-  * Verify the bus address in your configuration settings
-</Card>
+    <Accrodion title="Device connected, but no data is being received"  defaultOpen={false}>
+      * Verify that your Setup is configured correctly
 
-<Card title="Device connected, but no data is being received" icon="code" color="red">
-  * Verify that your Setup is configured correctly
+      * Check that the board and component are properly wired
+    </Accrodion>
 
-  * Check that the board and component are properly wired
-</Card>
+    <Accrodion title="System failed to read registers"  defaultOpen={false} />
 
-<Card title="System failed to read registers" icon="bolt" color="red" />
+    <Accrodion title="&#x22;Generate testing&#x22; button is not working" icon="bolt" defaultOpen={false}>
+      * Confirm that you have an active paid subscription to access testing features
 
-<Card title="&#x22;Generate testing&#x22; button is not working" icon="bolt" color="red">
-  * Confirm that you have an active paid subscription to access testing features
+      * Check for any errors in the Component Model
+    </Accrodion>
 
-  * Check for any errors in the Component Model
-</Card>
+    <Accrodion title="Error: ”There was a problem with the fetch operation”"  defaultOpen={false}>
 
-<Card title="Error: ”There was a problem with the fetch operation”" icon="bolt" color="red">
-
-</Card>
+    </Accrodion>
+</AccordionGroup>
