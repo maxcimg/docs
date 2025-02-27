@@ -7,11 +7,11 @@ This chapter lets you manage the device's register map. You have extensive flexi
 Each register in the model contains the following information:
 
 | **Section Name**     | **Description**                                                |
-|:-------------------- |:-------------------------------------------------------------- |
+| :------------------- | :------------------------------------------------------------- |
 | Name                 | Name of the register                                           |
 | Address              | Address of the register                                        |
 | Size                 | Size of the register. Can be selected in increments of 8.      |
-| Delay                |                                                                |
+| Delay                | Delay in ms after operation                                    |
 | Type                 | Defines type of the register between Configuration/Data/Status |
 | Access               | Defines access type between Read/Read-Write/Write              |
 | Default              | Defines default value of the register                          |
@@ -26,7 +26,7 @@ For registers with bitmaps, you'll find detailed bit allocation information. You
 Each bit allocation contains the following information:
 
 | **Section Name**    | **Description**                                                                                                                                                                                                                                   |
-|:------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Bit allocation      | Provides graphical representation of all fields in high to low bit order. Each field is clickable, opening further information. See “Adjusting bit allocation” on how to adjust this section.                                                     |
 | Offset              | Provides relative address of the field within bit allocation.                                                                                                                                                                                     |
 | Size                | Size of the field in bits.                                                                                                                                                                                                                        |
@@ -37,7 +37,11 @@ Each bit allocation contains the following information:
 
 *How do I adjust bit allocation?*
 
-You can make adjustments bith via graphical interface and via data fields.
+
+  <video autoPlay muted loop playsInline className="w-full aspect-video" src="https://embedd.it/img/Bit_alloc_.mp4" />
+
+
+You can make adjustments both via graphical interface and via data fields.
 
 You are able to:
 
