@@ -58,13 +58,6 @@
         ]
       },
       {
-        "group": "Generated Documentation",
-        "pages": [
-          "pages/howitworksdocs",
-          "pages/docscontents"
-        ]
-      },
-      {
         "group": "Contact Our Team",
         "pages": [
           "contact/contact"
