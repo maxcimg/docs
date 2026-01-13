@@ -27,6 +27,7 @@
           "mcu-mpu-configurator/sidebar",
           "mcu-mpu-configurator/property-panel",
           "mcu-mpu-configurator/schematic-view",
+          "mcu-mpu-configurator/logic-view",
           "mcu-mpu-configurator/dts-generation",
           "mcu-mpu-configurator/dts-validation",
           "mcu-mpu-configurator/dts-errors",

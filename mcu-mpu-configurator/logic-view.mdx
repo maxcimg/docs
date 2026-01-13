@@ -1,0 +1,26 @@
+---
+title: "Logic View"
+---
+
+### Logic View
+
+**Logic View** provides an alternative, graphical representation of the internal MCU/MPU architecture and its peripheral modules. Instead of focusing on physical pin placement, this view emphasizes logical relationships, signal flow, and module activation.
+
+The view is organized into three main areas:
+
+- **Peripheral modules with physical pinouts**\
+   These modules (for example UART, SPI, I²C, ADC) are displayed at the edges of the view. They expose their available signals and pin functions, allowing users to connect them to external devices and assign physical pins.
+- **Internal MCU/MPU modules**\
+   Core system components such as timers, memory blocks, internal clocks, DMA, and watchdogs are shown centrally. These modules do not have direct pin connections but interact with other peripherals and system resources.
+- **Logical connections and nodes**\
+   Connections between modules visually represent enabled interfaces, active signals, and configured relationships. This allows users to quickly understand how peripherals, internal resources, and external devices are linked.
+
+The Logic View helps users visually analyze:
+
+- Which modules are enabled or disabled
+- Which peripherals are actively using MCU/MPU resources
+- How external devices are connected to pin-based modules
+- Which pin functions are currently assigned and in use
+- Potential conflicts or unused capabilities within the configuration
+
+For modules that expose physical pinouts, users can add or remove nodes representing external devices or connections. Changes made in the Logic View are immediately reflected in pin assignments and configuration data, making it easier to explore different design options and validate system architecture early in the development process.
