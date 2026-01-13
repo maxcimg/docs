@@ -2,23 +2,21 @@
 title: "DTS Errors"
 ---
 
-### **DTS Errors**
-
-DTS errors are reported directly by the device tree compiler and binding validation logic. These errors typically indicate violations of DTS syntax or YAML binding rules and are prefixed with devicetree error:.
+DTS errors are reported directly by the device tree compiler and binding validation logic. These errors typically indicate violations of DTS syntax or YAML binding rules and are prefixed with `devicetree error:`.
 
 Common DTS error types include:
 
 - **Invalid node or property definitions**\
-   Examples include invalid property names (such as names containing spaces or special characters) or malformed DTS syntax.
+  Examples include invalid property names (such as names containing spaces or special characters) or malformed DTS syntax.
 - **Invalid property values**\
-   Certain data types impose size or format constraints. For example, numeric values exceeding 32 bits must be split into arrays. Violating these constraints results in validation errors.
+  Certain data types impose size or format constraints. For example, numeric values exceeding 32 bits must be split into arrays. Violating these constraints results in validation errors.
 - **Duplicate node names**\
-   Each node within a given scope must have a unique name. Defining two nodes with the same name is not permitted.
+  Each node within a given scope must have a unique name. Defining two nodes with the same name is not permitted.
 - **Missing required properties**\
-   If a property marked as required in the corresponding YAML binding is missing (for example, a missing clocks property for a serial peripheral), validation will fail.
+  If a property marked as required in the corresponding YAML binding is missing (for example, a missing clocks property for a serial peripheral), validation will fail.
 - **Invalid property types**\
-   Properties must match the type specified by the binding. For example, boolean properties must be defined without assigned values, and assigning a string or number instead will result in an error.
+  Properties must match the type specified by the binding. For example, boolean properties must be defined without assigned values, and assigning a string or number instead will result in an error.
 - **Invalid enumerated values**\
-   Properties defined as enum types must use one of the allowed values specified in the binding. Any value outside this list is rejected.
+  Properties defined as enum types must use one of the allowed values specified in the binding. Any value outside this list is rejected.
 - **Overwritten constant properties**\
-   Some binding properties are marked as constant (const). Assigning a different value than the one specified by the binding results in a validation error.
+  Some binding properties are marked as constant (const). Assigning a different value than the one specified by the binding results in a validation error.
