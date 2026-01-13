@@ -1,0 +1,17 @@
+---
+title: "Using Generated DTS"
+---
+
+### Using Generated DTS in Your Project
+
+Once the DTS is generated, follow these steps to integrate it with your Zephyr project:
+
+1. **Place the DTS File in Your Project**
+   - Copy the generated .dts file into your project folder, typically under boards/\<your_board\>/.
+   - Optionally, you can rename it to match your board or peripheral configuration.
+2. **Update the Board Configuration**
+   - Update your CMakeLists.txt or board configuration to point to the new DTS file.
+   - Ensure that Zephyr uses this DTS file when building your project by specifying it in the BOARD.dts path.
+3. **Rebuild Your Project**
+   - Run west build or your preferred Zephyr build command.
+   - Verify that the project compiles successfully without DTS validation errors.

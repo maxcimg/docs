@@ -1,0 +1,15 @@
+---
+title: "DTS Validation"
+---
+
+### **DTS Validation**
+
+To provide early feedback and prevent configuration issues, our system performs an internal validation of the generated Device Tree Source (DTS) before producing the final, fully assembled device tree.
+
+The validation process relies on the presence of a correctly defined compatible property. When the compatible field is properly set, the validator can apply the corresponding YAML bindings and detect a wide range of structural and semantic issues.
+
+As part of the validation, the system assembles a minimal Zephyr project using the generated DTS and runs the standard Zephyr build and device tree checks. The validation output is divided into build progress information and detailed error messages describing any detected issues.
+
+> **Note:** The Zephyr build system may stop at the first error encountered, so not all issues may be reported in a single validation run.
+
+This validation workflow helps catch common device tree issues early, improves alignment with Zephyr binding expectations, and increases confidence that the generated DTS can be integrated into a Zephyr-based project without manual correction.

@@ -2,17 +2,16 @@
 title: "DTS Generation"
 ---
 
-### DTS Generation 
+### DTS Generation
 
-User can generate and download the DTS file to their device. The generated DTS always includes all applied changes, if any.
+After the user has completed configuring all properties, creating nodes, and assigning pins in the device tree, the system provides the ability to generate the final DTS file. This step consolidates all of your configurations into a single, fully structured device tree source.
 
-During DTS generation, the system automatically performs a compilation check. As a result, one of the following messages is displayed:
+When generating the DTS file, the system performs several key tasks in the background:
 
-- a message indicating successful compilation;
-- an error message specifying the exact location of the compilation error.
+1. **Pinmux Conversion** – All configured pin multiplexing (pinmux) settings are automatically calculated and converted into the exact format required by the DTS. This ensures that pin assignments match the hardware specifications without the user needing to manually adjust values.
+2. **Pinctrl Node Assembly** – The system adds any required nodes to the pinctrl sections of the device tree, based on your pin assignments and peripheral configurations. This guarantees that all nodes are properly connected and follow the expected Zephyr bindings.
+3. **Full DTS Assembly** – All the configured nodes, properties, and pin settings are compiled into a complete DTS file. The generated file is fully **syntactically correct**, adheres to binding rules, and is ready to be used in a Zephyr project without additional manual edits.
 
-Please note that the generated DTS file can be downloaded regardless of the compilation result.
+> **Important Note:** At this time, the system **does not support generating DTS overlays**. This functionality is currently under development and will be available in a future update.
 
-To generate the DTS file, click [Generate DTS] in the MCU/MPU Shematic/Logical view section.
-
-To download the DTS file, click [Download DTS].
+> Please note that the generated DTS file can be downloaded regardless of the compilation result.
