@@ -22,7 +22,6 @@
       {
         "group": "MCU/MPU Configurator",
         "pages": [
-          "mcu-mpu-configurator/using-generated-dts",
           "mcu-mpu-configurator/untitled-page",
           "mcu-mpu-configurator/adding-component",
           "mcu-mpu-configurator/sidebar",
@@ -31,6 +30,7 @@
           "mcu-mpu-configurator/dts-generation",
           "mcu-mpu-configurator/dts-validation",
           "mcu-mpu-configurator/dts-errors",
+          "mcu-mpu-configurator/using-generated-dts",
           "mcu-mpu-configurator/supported-devices"
         ]
       },
