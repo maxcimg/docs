@@ -44,8 +44,7 @@
           "pages/commands",
           "pages/datatypes",
           "pages/events",
-          "pages/setup",
-          "pages/filters"
+          "pages/setup"
         ]
       },
       {
