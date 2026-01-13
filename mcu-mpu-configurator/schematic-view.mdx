@@ -1,0 +1,29 @@
+---
+title: "Schematic View"
+---
+
+### Schematic View
+
+The MCU/MPU Schematic provides an intuitive interface for working with microcontroller pins and their functions. It allows you to:
+
+- View all available MCU/MPU pins.
+- Inspect the functions associated with each pin.
+- Identify functions assigned to pins by default.
+- Assign new functions to pins as required.
+
+#### **_Viewing Available Functions_**
+
+To view the list of functions available for a specific pin, select the pin directly in the MCU/MPU schematic. A context menu displaying all supported functions for that pin will appear.
+
+#### **_Assigning and Unassigning Functions_**
+
+If a function is already assigned to a pin, it must be unassigned before a new function can be applied. Attempting to assign a second function without removing the existing one will result in an error message, and the change will not be applied or considered in subsequent MCU/MPU operations.
+
+A function can be unassigned in one of the following ways:
+
+- Click the function name again in the pin’s context menu.
+- Click the cross icon next to the function name at the top of the pin’s context menu.
+
+#### **_Interaction with the Properties Panel_**
+
+When a function is activated for a pin via the pin’s context menu, the Properties Panel of the corresponding module is automatically opened. This allows immediate access to the module’s node properties for review and, if necessary, modification.
