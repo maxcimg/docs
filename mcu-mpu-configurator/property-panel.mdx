@@ -4,14 +4,19 @@ title: "Property Panel"
 
 ### **Property Panel**
 
-After an MCU/MPU is added, the corresponding model appears in the MCU/MPU Sidebar Panel and can be expanded. Expanding the model reveals the _Pin Configuration_ section, which contains the device tree structure with configurable nodes.
+The Properties Panel is opened by selecting the desired node in the sidebar. It displays the core node attributes—_name, label, and address_—which can be edited, as well as the node’s direct properties.
 
-Users can interact with the nodes within the device tree in the following ways:
+The Properties Panel enables efficient management of node configuration and allows users to:
 
-- Open the MCU/MPU schematic by clicking either on the _Pin Configuration_ section or on the name of any node in the sidebar.
-- Open the Properties Panel for a specific node by selecting its name in the sidebar.
-- Rename a node by right-clicking on the node and selecting Rename.
-- Delete a node by right-clicking on it and selecting "Delete".
-- Add a new node by clicking the [ + ] icon next to the desired parent node.\
-  After clicking the [ + ] icon next to the desired parent node, a dialog is displayed allowing the user to either add a new blank node or select a node from the available list.
-- Reorder or relocate nodes using drag-and-drop functionality.
+- Edit existing properties.
+- Add properties from the list of predefined properties.
+- Create custom properties and assign them to nodes.
+- Remove properties from a node.
+
+For certain nodes with an okay status, the Properties Panel also includes a Pins section. This section allows users to assign specific functions to MCU/MPU pins. Any pin assignment is immediately reflected in the MCU/MPU schematic, providing real-time visual feedback.
+
+Properties can be edited by clicking the pencil icon and selecting either the Available Properties or Custom Properties tab.
+
+The Available Properties tab contains standard properties. Additionally, users can search for properties by name using the search field.
+
+When creating a custom property, the user must specify the property name and select the property type from the available list.

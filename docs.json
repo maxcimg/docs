@@ -16,9 +16,7 @@
           "pages/quickstart",
           "pages/register",
           "pages/vs-code",
-          "pages/webapp",
-          "pages/navigatingui",
-          "pages/datasheetupload"
+          "pages/webapp"
         ]
       },
       {
@@ -31,41 +29,6 @@
           "mcu-mpu-configurator/schematic-view",
           "mcu-mpu-configurator/dts-generation",
           "mcu-mpu-configurator/supported-devices"
-        ]
-      },
-      {
-        "group": "Component Model",
-        "pages": [
-          "pages/howitworkscomponent",
-          "pages/errormanagementcomponent",
-          "pages/pdfbacklink",
-          "pages/generalinfo",
-          "pages/registers",
-          "pages/commands",
-          "pages/datatypes",
-          "pages/events",
-          "pages/setup"
-        ]
-      },
-      {
-        "group": "Testing",
-        "pages": [
-          "pages/howitworkstesting",
-          "pages/generatingtestingenv",
-          "pages/connectingdevboard",
-          "pages/listofboards",
-          "pages/data-analytics",
-          "pages/errorhandling"
-        ]
-      },
-      {
-        "group": "Drivers",
-        "pages": [
-          "pages/howitworksdrivers",
-          "pages/drivertargets",
-          "pages/baremetal",
-          "pages/cmsis",
-          "pages/zephyr"
         ]
       },
       {
